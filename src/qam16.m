@@ -33,7 +33,7 @@ function ret = qam16 (bitstream, energy=1)
 
     # Make a temporary buffer, pad length to multiple of 2
     size_quad = length(quad_odd) + length(quad_even);
-    size_quad = size_quad + mod(size_quad, 2)
+    size_quad = size_quad + mod(size_quad, 2);
     bitstream_quad = zeros(1, size_quad);
 
     bitstream_quad(1:2:size_quad) = quad_odd;
