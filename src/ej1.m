@@ -35,7 +35,6 @@ hold on;
 scatter(real(qpsk_coords), imag(qpsk_coords), 20, "r", "filled");
 scatter(real(qpsk_noise),  imag(qpsk_noise), "b");
 grid on;
-title('QPSK Eb_{N0} = 10 dB')
 title('QPSK E_{B} / N_{0} = 10 dB')
 xlabel ('Real');
 ylabel ('Imag');
