@@ -28,7 +28,7 @@ qpsk_coords = qpsk(qpsk_bits);
 
 qpsk_bits_noise = repmat(qpsk_bits, SYMBOLS, 1);
 qpsk_bits_noise = qpsk_bits_noise'(:)';
-qpsk_noise = addnoise(qpsk(qpsk_bits_noise), 10);
+qpsk_noise = addnoise(qpsk(qpsk_bits_noise), 10, 2);
 
 figure();
 hold on;
@@ -50,7 +50,7 @@ qam16_coords = qam16(qam16_bits);
 
 qam16_bits_noise = repmat(qam16_bits, SYMBOLS, 1);
 qam16_bits_noise = qam16_bits_noise'(:)';
-qam16_noise = addnoise(qam16(qam16_bits_noise), 10);
+qam16_noise = addnoise(qam16(qam16_bits_noise), 10, 4);
 
 figure();
 hold on;
