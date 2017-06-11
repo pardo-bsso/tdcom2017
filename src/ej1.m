@@ -1,6 +1,5 @@
 # Cantidad de simbolos por esquema de modulacion.
 SYMBOLS = 250;
-SYMBOLS = 10;
 
 # BPSK
 
