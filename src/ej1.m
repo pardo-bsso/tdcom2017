@@ -7,6 +7,7 @@ SYMBOLS = 10;
 bpsk_coords = bpsk([1 0]);
 bpsk_noise = addnoise(bpsk([zeros(1, SYMBOLS) ones(1, SYMBOLS)]), 10);
 
+figure();
 hold on;
 scatter(real(bpsk_coords), imag(bpsk_coords), 20, "r", "filled");
 scatter(real(bpsk_noise),  imag(bpsk_noise), "b");
