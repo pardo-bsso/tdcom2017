@@ -27,7 +27,7 @@ qpsk_coords = qpsk(qpsk_bits);
 
 qpsk_bits_noise = repmat(qpsk_bits, SYMBOLS, 1);
 qpsk_bits_noise = qpsk_bits_noise'(:)';
-qpsk_noise = addnoise(qpsk(qpsk_bits_noise, 10));
+qpsk_noise = addnoise(qpsk(qpsk_bits_noise), 10);
 
 figure();
 hold on;
