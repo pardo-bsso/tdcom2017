@@ -5,8 +5,9 @@ source ej1_2_common.m
 ## QPSK
 
 QPSK_BITS_PER_SYMBOL = 2;
+QPSK_SYMBOLS = 4;
 qpsk_bits = [0 0 0 1 1 0 1 1];
-qpsk_bits = repmat(qpsk_bits, SYMBOLS_ERROR / QPSK_BITS_PER_SYMBOL, 1);
+qpsk_bits = repmat(qpsk_bits, SYMBOLS_ERROR / QPSK_SYMBOLS, 1);
 qpsk_bits = qpsk_bits'(:)';
 qpsk_symbols = qpsk(qpsk_bits);
 
