@@ -6,7 +6,7 @@ source ej1_2_common.m
 
 BPSK_BITS_PER_SYMBOL = 1;
 bpsk_bits = [1 0];
-bpsk_bits = repmat(bpsk_bits, SYMBOLS_ERROR, 1);
+bpsk_bits = repmat(bpsk_bits, SYMBOLS_ERROR / BPSK_BITS_PER_SYMBOL, 1);
 bpsk_bits = bpsk_bits'(:)';
 bpsk_symbols = bpsk(bpsk_bits);
 

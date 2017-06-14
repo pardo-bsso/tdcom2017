@@ -5,8 +5,8 @@ source ej1_2_common.m
 ## QAM16
 
 QAM16_BITS_PER_SYMBOL = 4;
-qam16_bits = [1 0];
-qam16_bits = repmat(qam16_bits, SYMBOLS_ERROR, 1);
+qam16_bits = [0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 1 1 1 1 0 0 0 1 0 0 1 1 0 1 0 1 0 1 1 1 1 0 0 1 1 0 1 1 1 1 0 1 1 1 1];
+qam16_bits = repmat(qam16_bits, SYMBOLS_ERROR / QAM16_BITS_PER_SYMBOL, 1);
 qam16_bits = qam16_bits'(:)';
 qam16_symbols = qam16(qam16_bits);
 
