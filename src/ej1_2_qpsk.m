@@ -27,7 +27,7 @@ for EbN0 = EbN0_steps
         errors += sum(qpsk_bits ~= qpsk_noisy_bits);
     end
 
-    p_error = errors / (repetitions * SYMBOLS_ERROR * QPSK_BITS_PER_SYMBOL);
+    p_error = errors / (repetitions * length(qpsk_bits));
     qpsk_eb_n0(end+1) = EbN0;
     qpsk_p_error(end+1) = p_error;
 

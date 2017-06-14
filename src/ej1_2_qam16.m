@@ -27,7 +27,7 @@ for EbN0 = EbN0_steps
         errors += sum(qam16_bits ~= qam16_noisy_bits);
     end
 
-    p_error = errors / (repetitions * SYMBOLS_ERROR * QAM16_BITS_PER_SYMBOL);
+    p_error = errors / (repetitions * length(qam16_bits));
     qam16_eb_n0(end+1) = EbN0;
     qam16_p_error(end+1) = p_error;
 

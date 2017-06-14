@@ -27,7 +27,7 @@ for EbN0 = EbN0_steps
         errors += sum(bpsk_bits ~= bpsk_noisy_bits);
     end
 
-    p_error = errors / (repetitions * SYMBOLS_ERROR * BPSK_BITS_PER_SYMBOL);
+    p_error = errors / (repetitions * length(bpsk_bits));
     bpsk_eb_n0(end+1) = EbN0;
     bpsk_p_error(end+1) = p_error;
 
