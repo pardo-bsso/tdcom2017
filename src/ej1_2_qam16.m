@@ -22,7 +22,7 @@ for EbN0 = EbN0_steps
 
     while errors < ERROR_COUNT_LIMIT
         repetitions += 1;
-        qam16_noisy_symbols = addnoise(qam16_symbols, EbN0, QAM16_BITS_PER_SYMBOL);
+        qam16_noisy_symbols = addnoise(qam16_symbols, EbN0);
         qam16_noisy_bits = qam16_demod(qam16_noisy_symbols);
         errors += sum(qam16_bits ~= qam16_noisy_bits);
     end
@@ -41,11 +41,11 @@ M = 16;
 sqrt_M = sqrt(M);
 log2_M = log2(M);
 
-# Approximation.
-# qam16_p_error_theoric = ((4*(sqrt_M - 1))/ (sqrt_M * log2_M)) * qfunc(sqrt(qam16_eb_n0_times .* (3*log2_M / (M-1))));
+# Exact, P. symbol error.
+qam16_p_error_theoric = 1 - (1 - (2*(sqrt_M - 1)/sqrt_M)*qfunc(sqrt((3*4*qam16_eb_n0_times)/(M-1)))).^2;
 
-# Exact.
-qam16_p_error_theoric = 1 - (1 - (2*(sqrt_M - 1)/sqrt_M)*qfunc(sqrt((3*4.*qam16_eb_n0_times)/(M-1))));
+# Because of Gray encoding, we assume that missing a symbol leads to only one bit error
+qam16_p_error_theoric /= 4;
 
 
 figure();
