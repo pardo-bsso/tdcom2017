@@ -8,8 +8,8 @@ bpsk_noise = addnoise(bpsk([zeros(1, SYMBOLS) ones(1, SYMBOLS)]), 10);
 
 figure();
 hold on;
-scatter(real(bpsk_coords), imag(bpsk_coords), 20, "r", "filled");
 scatter(real(bpsk_noise),  imag(bpsk_noise), "b");
+scatter(real(bpsk_coords), imag(bpsk_coords), 20, "r", "filled");
 axis([-2 2 -2 2])
 grid on;
 title('BPSK Eb_{N0} = 10 dB')
@@ -32,8 +32,8 @@ qpsk_noise = addnoise(qpsk(qpsk_bits_noise), 10, 2);
 
 figure();
 hold on;
-scatter(real(qpsk_coords), imag(qpsk_coords), 20, "r", "filled");
 scatter(real(qpsk_noise),  imag(qpsk_noise), "b");
+scatter(real(qpsk_coords), imag(qpsk_coords), 20, "r", "filled");
 axis([-3 3 -3 3])
 grid on;
 title('QPSK E_{B} / N_{0} = 10 dB')
@@ -55,8 +55,8 @@ qam16_noise = addnoise(qam16(qam16_bits_noise), 10, 4);
 
 figure();
 hold on;
-scatter(real(qam16_coords), imag(qam16_coords), 20, "r", "filled");
 scatter(real(qam16_noise),  imag(qam16_noise), "b");
+scatter(real(qam16_coords), imag(qam16_coords), 20, "r", "filled");
 axis([-4 4 -4 4])
 grid on;
 title('QAM16 E_{B} / N_{0} = 10 dB')
