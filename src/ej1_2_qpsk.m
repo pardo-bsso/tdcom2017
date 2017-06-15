@@ -22,7 +22,7 @@ for EbN0 = EbN0_steps
 
     while errors < ERROR_COUNT_LIMIT
         repetitions += 1;
-        qpsk_noisy_symbols = addnoise(qpsk_symbols, EbN0, QPSK_BITS_PER_SYMBOL);
+        qpsk_noisy_symbols = addnoise(qpsk_symbols, EbN0);
         qpsk_noisy_bits = qpsk_demod(qpsk_noisy_symbols);
         errors += sum(qpsk_bits ~= qpsk_noisy_bits);
     end
@@ -37,7 +37,7 @@ for EbN0 = EbN0_steps
 end
 
 qpsk_eb_n0_times = 10 .^ (qpsk_eb_n0 / 10);
-qpsk_p_error_theoric = qfunc(sqrt(qpsk_eb_n0_times));
+qpsk_p_error_theoric = qfunc(sqrt(2*qpsk_eb_n0_times));
 
 figure();
 hold on;
