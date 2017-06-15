@@ -4,28 +4,17 @@ function ret = qam16_demod (symbols)
     size_symbols = length(symbols);
     size_output  = size_symbols * 4;
 
-    re = real(symbols);
-    im = imag(symbols);
+    I = real(symbols);
+    Q = imag(symbols);
 
-    offsets    = zeros(1, size_symbols);
-    offsets_re = zeros(1, size_symbols);
-    offsets_im = zeros(1, size_symbols);
-
-    offsets_re(re > 0) = 2*A;
-    offsets_re(re < 0) = -2*A;
-    offsets_im(im > 0) = + 2j*A;
-    offsets_im(im < 0) = -2j*A;
-    offsets = offsets_re + offsets_im;
-
-    quad = qpsk_demod(offsets);
-    quad_size = length(quad);
-    data = qpsk_demod(symbols - offsets);
+    I_data = pam_gray_dec(I, A);
+    Q_data = pam_gray_dec(Q, A);
 
     demod = zeros(1, size_output);
-    demod(1:4:size_output) = quad(1:2:quad_size);
-    demod(2:4:size_output) = quad(2:2:quad_size);
-    demod(3:4:size_output) = data(1:2:quad_size);
-    demod(4:4:size_output) = data(2:2:quad_size);
+    demod(1:4:size_output) = I_data(1:2:end);
+    demod(2:4:size_output) = I_data(2:2:end);
+    demod(3:4:size_output) = Q_data(1:2:end);
+    demod(4:4:size_output) = Q_data(2:2:end);
 
     ret = demod;
 endfunction
