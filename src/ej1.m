@@ -10,6 +10,7 @@ figure();
 hold on;
 scatter(real(bpsk_coords), imag(bpsk_coords), 20, "r", "filled");
 scatter(real(bpsk_noise),  imag(bpsk_noise), "b");
+axis([-2 2 -2 2])
 grid on;
 title('BPSK Eb_{N0} = 10 dB')
 title('BPSK E_{B} / N_{0} = 10 dB')
@@ -33,6 +34,7 @@ figure();
 hold on;
 scatter(real(qpsk_coords), imag(qpsk_coords), 20, "r", "filled");
 scatter(real(qpsk_noise),  imag(qpsk_noise), "b");
+axis([-3 3 -3 3])
 grid on;
 title('QPSK E_{B} / N_{0} = 10 dB')
 xlabel ('Real');
@@ -55,6 +57,7 @@ figure();
 hold on;
 scatter(real(qam16_coords), imag(qam16_coords), 20, "r", "filled");
 scatter(real(qam16_noise),  imag(qam16_noise), "b");
+axis([-4 4 -4 4])
 grid on;
 title('QAM16 E_{B} / N_{0} = 10 dB')
 xlabel ('Real');
