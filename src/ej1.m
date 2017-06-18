@@ -12,7 +12,6 @@ scatter(real(bpsk_noise),  imag(bpsk_noise), "b");
 scatter(real(bpsk_coords), imag(bpsk_coords), 20, "r", "filled");
 axis([-2 2 -2 2])
 grid on;
-title('BPSK Eb_{N0} = 10 dB')
 title('BPSK E_{B} / N_{0} = 10 dB')
 xlabel ('Real');
 ylabel ('Imag');
