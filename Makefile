@@ -19,4 +19,4 @@ out/%.docx: %.md
 	pandoc -t docx -o $@ $<
 
 out/%.png: src/%.svg
-	inkscape -z -D -d 150 -e $@ $< && mogrify -density 300 -units PixelsPerInch $@
+	inkscape -z -D -d 150 -b white -e $@ $< && mogrify -density 300 -units PixelsPerInch $@
