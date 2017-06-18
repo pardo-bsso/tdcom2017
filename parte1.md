@@ -142,3 +142,25 @@ Nuevamente se observa que los resultados experimentales concuerdan con los teór
 
 
 \pagebreak
+
+
+### QPSK
+
+Para simplificar y acotar la probabilidad de error se asume que tanto la componente en fase como en cuadratura de la
+señal recibida fueron reducidas en el factor $min\{ cos(\theta), sin(\theta) \}$:
+
+$$ I = Q = E_{s} \cdot min\{ cos(\theta), sin(\theta) \} = \sqrt{E_{b}} $$
+
+$$ min\{ cos(\theta), sin(\theta) \} = sin(\theta) \approx 0.382 $$
+
+Reemplazando en la expresión obtenida anteriormente la probabilidad de error de bit es menor o igual a:
+
+$$ P_{eb} \leq Q\left( \sqrt{ \frac{2 \cdot E_{b} sin^2(\theta)}{N_{0}} } \right) $$
+
+Si bien para altas relaciones señal a ruido se observa una diferencia de aproximadamente un orden de magnitud entre la
+cota y la tasa de error experimental para valores bajos de la misma es aceptable.
+
+
+![Coordenadas QPSK con error de fase](out/qpsk_250_ebno_10db_pi_8.png "QPSK")
+
+![Desempeño QPSK frente a ruido y error de fase](out/qpsk_p_error_pi_8.png "QPSK")
