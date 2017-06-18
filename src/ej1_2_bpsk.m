@@ -4,8 +4,6 @@ source ej1_2_common.m
 
 ## BPSK
 
-BPSK_BITS_PER_SYMBOL = 1;
-BPSK_SYMBOLS = 4;
 bpsk_bits = [1 0];
 bpsk_bits = repmat(bpsk_bits, SYMBOLS_ERROR / BPSK_SYMBOLS, 1);
 bpsk_bits = bpsk_bits'(:)';
@@ -22,7 +20,7 @@ for EbN0 = EbN0_steps
 
     while errors < ERROR_COUNT_LIMIT
         repetitions += 1;
-        bpsk_noisy_symbols = addnoise(bpsk_symbols, EbN0, BPSK_BITS_PER_SYMBOL);
+        bpsk_noisy_symbols = addnoise(bpsk_symbols, EbN0);
         bpsk_noisy_bits = bpsk_demod(bpsk_noisy_symbols);
         errors += sum(bpsk_bits ~= bpsk_noisy_bits);
     end

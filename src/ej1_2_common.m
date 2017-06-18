@@ -1,6 +1,6 @@
 ## Common definitons for all the steps of ej2
 
-pkg load communications;
+source common.m
 
 # Process in batches of this many symbols until an error is found.
 SYMBOLS_ERROR = 100 * 1000;

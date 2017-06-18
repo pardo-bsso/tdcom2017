@@ -1,10 +1,10 @@
-# Cantidad de simbolos por esquema de modulacion.
-SYMBOLS = 250;
+source common.m
 
 # BPSK
 
-bpsk_coords = bpsk([1 0]);
-bpsk_noise = addnoise(bpsk([zeros(1, SYMBOLS) ones(1, SYMBOLS)]), 10);
+bpsk_bits_noise = repmat(bpsk_bits, SYMBOLS, 1);
+bpsk_bits_noise = bpsk_bits_noise'(:)';
+bpsk_noise = addnoise(bpsk(bpsk_bits_noise), 10);
 
 figure();
 hold on;
@@ -22,13 +22,9 @@ hold off;
 
 # QPSK
 
-qpsk_bits = unique(nchoosek([1  0 1 0], 2), 'rows');
-qpsk_bits = qpsk_bits'(:)';
-qpsk_coords = qpsk(qpsk_bits);
-
 qpsk_bits_noise = repmat(qpsk_bits, SYMBOLS, 1);
 qpsk_bits_noise = qpsk_bits_noise'(:)';
-qpsk_noise = addnoise(qpsk(qpsk_bits_noise), 10, 2);
+qpsk_noise = addnoise(qpsk(qpsk_bits_noise), 10);
 
 figure();
 hold on;
@@ -45,10 +41,6 @@ hold off;
 
 # QAM16
 
-# nchoosek blows here.
-qam16_bits = [0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 1 1 1 1 0 0 0 1 0 0 1 1 0 1 0 1 0 1 1 1 1 0 0 1 1 0 1 1 1 1 0 1 1 1 1];
-qam16_coords = qam16(qam16_bits);
-
 qam16_bits_noise = repmat(qam16_bits, SYMBOLS, 1);
 qam16_bits_noise = qam16_bits_noise'(:)';
 qam16_noise = addnoise(qam16(qam16_bits_noise), 10, 4);
@@ -64,5 +56,3 @@ xlabel ('Real');
 ylabel ('Imag');
 print -color -dsvg 'qam16_250_ebno_10db.svg'
 hold off;
-
-
