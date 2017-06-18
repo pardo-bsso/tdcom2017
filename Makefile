@@ -12,7 +12,7 @@ docx: $(DOCX) $(PNGS)
 
 all: $(PDFS)
 
-out/%.pdf: %.md
+out/%.pdf: %.md $(PNGS)
 	pandoc --latex-engine=xelatex --template templates/default.latex -V pagestyle=ath -o $@ $<
 
 out/%.docx: %.md
