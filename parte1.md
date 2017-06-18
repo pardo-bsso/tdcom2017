@@ -109,3 +109,36 @@ En este caso se observa que los resultados teóricos y experimentales concuerdan
 son ligeramente distintos para valores bajos de la misma.
 
 ![Desempeño QAM16 frente al ruido](out/qam16_p_error.png "QAM16")
+
+
+## Ejercicio 2: Error de fase de portadora
+
+En esta parte se analizará nuevamente el desempeño de los sistemas pero en este caso junto con el ruido se incluye una
+diferencia de fase en la portadora del receptor de $\pi / 8$ radianes.
+
+
+\pagebreak
+
+
+### BPSK
+
+En este caso se observa que la magnitud de la componente real de la señal recibida es menor:
+
+$$ R_{I} = S_{I} \cdot cos(\theta) $$
+
+Por lo tanto la energía de bit es:
+
+$$ E_{B}(\theta) = E_{B} \cdot cos^2(\theta) $$
+
+Y la probabilidad de error:
+
+$$ P_{eb} = Q\left( \sqrt{ \frac{2 \cdot E_{b} cos^2(\theta)}{N_{0}} } \right) $$
+
+Nuevamente se observa que los resultados experimentales concuerdan con los teóricos
+
+![Coordenadas BPSK con error de fase](out/bpsk_250_ebno_10db_pi_8.png "BPSK")
+
+![Desempeño BPSK frente a ruido y error de fase](out/bpsk_p_error_pi_8.png "BPSK")
+
+
+\pagebreak
