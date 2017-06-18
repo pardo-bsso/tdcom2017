@@ -1,7 +1,5 @@
-source common.m
+source ej_2_common.m
 
-THETA = pi / 8;
-ROTATE = exp(-j*THETA);
 # BPSK
 
 bpsk_bits_noise = repmat(bpsk_bits, SYMBOLS, 1);
