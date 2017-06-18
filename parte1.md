@@ -1,3 +1,8 @@
+---
+author:
+- Adrián Pardini
+...
+
 # Teoría de las Comunicaciones 2017 - Trabajo Práctico de Simulación
 
 Adrián Pardini - 54024
