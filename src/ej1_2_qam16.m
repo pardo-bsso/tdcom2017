@@ -39,8 +39,9 @@ M = 16;
 sqrt_M = sqrt(M);
 log2_M = log2(M);
 
-# Exact, P. symbol error.
-qam16_p_error_theoric = 1 - (1 - (2*(sqrt_M - 1)/sqrt_M)*qfunc(sqrt((3*4*qam16_eb_n0_times)/(M-1)))).^2;
+# Exact, P. symbol error. Proakis, Digital Communications 5.2.79
+psq = 2*(1- 1/sqrt_M)*qfunc(sqrt(3*4*qam16_eb_n0_times/(M-1)));
+qam16_p_error_theoric = 1 - (1 - psq).^2;
 
 # Because of Gray encoding, we assume that missing a symbol leads to only one bit error
 qam16_p_error_theoric /= 4;
