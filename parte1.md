@@ -20,7 +20,7 @@ posee distorsión y su único efecto es añadir ruido.
 Bajo esas condiciones pueden eliminarse los procesos de modulación y demodulación y trabajar en espacio de señal.
 
 
-### Ejercicio 1
+## Ejercicio 1
 
 
 En primer lugar se visualizan los símbolos de esquemas BPSK, QPSK y QAM16 junto con 250 realizaciones de cada uno
