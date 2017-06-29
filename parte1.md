@@ -87,7 +87,7 @@ $$ P_{c} = \left( 1 - P_{\sqrt{M}} \right) ^ 2$$
 Donde $P_{\sqrt{M}}$ es la probabilidad de error de un sistema PAM con la mitad de energía que la constelación original
 y $\sqrt{M}$ niveles.
 
-$$ P_{\sqrt{M}} = 2 \left( 1 - \frac{1}{\sqrt{M}} \right) \cdot Q \left( \frac{3}{M - 1} \frac{E}{N_{0}} \right) $$
+$$ P_{\sqrt{M}} = 2 \left( 1 - \frac{1}{\sqrt{M}} \right) \cdot Q \left( \sqrt{ \frac{3}{M - 1} \frac{E}{N_{0}} } \right) $$
 
 En la expresión anterior E es la energía promedio del sistema QAM. Al haber 4 bits por símbolo y cada uno ser de energía
 unitaria la relación $E / N_{0}$ es igual a $4E_{b} / N_{0}$
