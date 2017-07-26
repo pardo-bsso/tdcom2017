@@ -6,7 +6,7 @@ function ret = addnoise (symbols, EbN0_db=3)
     re = real(symbols);
     im = imag(symbols);
 
-    re = re + amplitude * randn(1, length(re));
-    im = im + amplitude * randn(1, length(im));
+    re = re + amplitude * randn(rows(re), columns(re));
+    im = im + amplitude * randn(rows(im), columns(im));
     ret = re + 1j * im;
 endfunction
