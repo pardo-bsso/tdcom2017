@@ -42,6 +42,8 @@ input_alphabet = [ 0, 0, 0, 0, 0 ;
                    1, 1, 1, 1, 0 ;
                    1, 1, 1, 1, 1 ];
 
+CODEWORDS = mod(input_alphabet * G, 2);
+
 # Process in batches of this many alphabets until an error is found.
 ALPHABETS_ERROR = 100 * 1000;
 
@@ -55,5 +57,5 @@ EbN0_steps = EbN0_db_START:EbN0_db_STEP:EbN0_db_END;
 ERROR_COUNT_LIMIT = 100;
 PE_LIMIT = 1e-5;
 
-INPUT_ALPHABETS = repmat(input_alphabet, ALPHABETS_ERROR, 1);
-BPSK_SYMBOLS = bpsk(INPUT_ALPHABETS);
+INPUT_CODEWORDS = repmat(CODEWORDS, ALPHABETS_ERROR, 1);
+BPSK_SYMBOLS = bpsk(INPUT_CODEWORDS);
