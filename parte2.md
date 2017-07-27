@@ -127,7 +127,6 @@ $$ t = \left \lfloor \frac{d_{min} - 1}{2} \right \rfloor = 1  \  error $$
 La ganancia asintótica del código con decisión dura es (Proakis, Digital Communications 8.1)
 
 $$ G_a = 10 log (R_c \frac{d_{min} + 1}{2}) \ [dB] $$
-$$ G_a = 0.46 dB $$
 $$ G_a = 1.05 dB $$
 
 Para un código de bloque (n,k) en un canal simétrico con probabilidad de error *p*, la probabilidad de error de palabra (corregida) está
