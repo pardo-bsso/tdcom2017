@@ -21,7 +21,7 @@ for EbN0 = EbN0_steps
     bit_errors_corrected  = 0;
     word_errors_corrected = 0;
 
-    while word_errors_corrected < CORRECTED_WORD_ERROR_COUNT_LIMIT
+    while word_errors < WORD_ERROR_COUNT_LIMIT
         repetitions += 1;
         bpsk_noisy_symbols = addnoise(BPSK_SYMBOLS, EbN0);
 
@@ -33,6 +33,7 @@ for EbN0 = EbN0_steps
         word_errors_idx = sum(mod(noisy_words * H', 2), 2) ~= 0;
         # Counts words whose error pattern turns them into a valid codeword
         word_errors += nnz(sum((noisy_words ~= INPUT_CODEWORDS), 2)) - sum(word_errors_idx);
+        detected_word_errors += sum(word_errors_idx);
 
         word_errors_corrected  += nnz(sum((corrected_words ~= INPUT_CODEWORDS), 2));
         decoded_bits_with_error = (decoded_bits ~= INPUT_ALPHABET);
@@ -58,7 +59,7 @@ for EbN0 = EbN0_steps
     p_error_word(end+1) = p_error_w;
     p_error_word_corrected(end+1) = p_error_wc;
 
-    if p_error_wc <= PE_LIMIT
+    if p_error_w <= PE_LIMIT
         break
     end
 end

@@ -61,7 +61,7 @@ EbN0_db_STEP  = 1;
 EbN0_steps = EbN0_db_START:EbN0_db_STEP:EbN0_db_END;
 
 # Stop conditions (tweaked a little so the script doesn't take forever to complete)
-CORRECTED_WORD_ERROR_COUNT_LIMIT = 40;
+WORD_ERROR_COUNT_LIMIT = 50;
 PE_LIMIT = 2e-5;
 
 INPUT_ALPHABET  = repmat(input_alphabet, ALPHABETS_ERROR, 1);
