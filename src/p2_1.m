@@ -20,6 +20,7 @@ for EbN0 = EbN0_steps
     word_errors = 0;
     bit_errors_corrected  = 0;
     word_errors_corrected = 0;
+    detected_word_errors = 0;
 
     while word_errors < WORD_ERROR_COUNT_LIMIT
         repetitions += 1;
@@ -45,7 +46,7 @@ for EbN0 = EbN0_steps
         bit_errors += sum(bit_errors_per_corrected_word(word_errors_idx~=0));
     end
 
-    p_error_w  = word_errors           / (repetitions * rows(INPUT_CODEWORDS));
+    p_error_w  = word_errors           / (repetitions * rows(INPUT_CODEWORDS) - detected_word_errors);
     p_error_wc = word_errors_corrected / (repetitions * rows(INPUT_CODEWORDS));
     p_error_sc = bit_errors_corrected  / (repetitions * rows(INPUT_ALPHABET) * columns(INPUT_ALPHABET) );
     # We use ARQ, so the amount of total bits in error is smaller
