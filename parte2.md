@@ -135,7 +135,7 @@ acotada por la probabilidad de que *t* o más bits estén errados en un bloque d
 $$ Pe_w \leq \sum_{m = t +1 }^n \binom{n}{m} p^m (1 -p)^{(n-m)} $$
 
 Si el código se utiliza sólo como detector la probabilidad de error de palabra está dada por la probabilidad de que
-$$ d_{min} - 1 $$ o más bits estén errados en un bloque de *k* bits.
+$d_{min} - 1$ o más bits estén errados en un bloque de *k* bits.
 
 $$ Pd \leq \sum_{m = d_{min} - 1}^n \binom{n}{m} p^m (1 -p)^{(n-m)} $$
 
@@ -148,4 +148,4 @@ $$ Pe_u = 1 - (1 - p)^k $$
 
 Se procedió en forma similar a la primer parte a relevar las características del sistema, modificando las condiciones de
 corte para detener cada iteración cuando por cada relación señal a ruido de 0 dB a 10 dB se llegue a 40 errores de
-palabra luego de emplear el código como corrector o la probabilidad de error de palabra corregida sea menor que $$ 2 \cdot 10^{-5} $$ , lo que suceda primero.
+palabra luego de emplear el código como corrector o la probabilidad de error de palabra corregida sea menor que $2 \cdot 10^{-5}$ , lo que suceda primero.
