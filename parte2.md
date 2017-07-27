@@ -144,8 +144,11 @@ De no emplearse un código corrector la probabilidad de error en un bloque de *k
 $$ Pe_u = 1 - (1 - p)^k $$
 
 
-\pagebreak
-
 Se procedió en forma similar a la primer parte a relevar las características del sistema, modificando las condiciones de
 corte para detener cada iteración cuando por cada relación señal a ruido de 0 dB a 10 dB se llegue a 40 errores de
 palabra luego de emplear el código como corrector o la probabilidad de error de palabra corregida sea menor que $2 \cdot 10^{-5}$ , lo que suceda primero.
+
+
+![Probabilidad de error de palabra al usar el código como corrector (palabras distintas luego de corregir errores)](out/p_error_corrector95.png "P error corrector")
+
+![Probabilidad de error de palabra al usar el código como detector (palabras distintas luego de descartar las detectadas con sindrome no nulo)](out/p_error_detector95.png "P error detector")
